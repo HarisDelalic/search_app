@@ -33,6 +33,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'bootstrap-sass', '~> 3.3.7'
+
 group :development, :test do
   # Used to extract env variables to .env file, Read more: https://github.com/bkeepers/dotenv
   gem 'dotenv-rails'
