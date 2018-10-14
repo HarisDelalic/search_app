@@ -1,4 +1,10 @@
-All searches:<br />
-<%= @searches.each do |search| %>
-  <%= search.ip %> - <%= search.query %>
-<% end %>
+<div class="container down">
+  <%= render 'search_form', search: @search %>
+</div>
+
+<div class="container down">
+  <% @searches.each do |search| %>
+    <%= search.ip %>
+    <%= search.query %>
+  <% end %>
+</div>
