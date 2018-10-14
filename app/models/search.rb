@@ -1,7 +1,7 @@
 class Search < ApplicationRecord
   scope :by_ip, ->(ip) { where(ip: ip) }
 
-  def contained_by_existing_search?
+  def contained_in_existing_search?
     existing_ip_queries = Search.by_ip(ip)
     existing_ip_queries.each do |existing_ip_query|
       return true if existing_ip_query.query.include?(query)
