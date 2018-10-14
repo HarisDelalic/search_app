@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe SearchesController, type: :controller do
   describe 'POST #create' do
 
-    let(:ip) { '170.170.170.170' }
+    let(:ip) { '0.0.0.0' }
     let(:contained_search_query) { 'How do I' }
     let(:valid_query) { 'How do I fix bicycle' }
 

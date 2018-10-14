@@ -6,14 +6,12 @@ class SearchesController < ApplicationController
 
   def create
     @search = Search.new(search_params)
-    @search.remove_contained_searches
-    unless @search.contained_by_existing_search?
-      @search.save
-    end
+    Searcher.new(@search, remote_ip, search_params).run
+    redirect_to searches_path
   end
 
   private
   def search_params
-    params.require(:search).permit(:ip, :query)
+    params.require(:search).permit(:query)
   end
 end

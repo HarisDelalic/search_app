@@ -1,5 +1,4 @@
 class Search < ApplicationRecord
-
   scope :by_ip, ->(ip) { where(ip: ip) }
 
   def contained_by_existing_search?
