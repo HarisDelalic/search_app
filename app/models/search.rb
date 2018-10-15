@@ -1,4 +1,7 @@
 class Search < ApplicationRecord
+  validates :query, length: {minimum: 3}
+  validates :ip, presence: true
+
   scope :by_ip, ->(ip) { where(ip: ip) }
 
   def contained_in_existing_search?
