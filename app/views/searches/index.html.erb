@@ -1,10 +1,24 @@
 <div class="container down">
   <%= render 'search_form', search: @search %>
-</div>
 
-<div class="container down">
-  <% @searches.each do |search| %>
-    <%= search.ip %>
-    <%= search.query %>
-  <% end %>
+  <div class="row">
+    <div class="col-md-6 col-md-6-offset 3">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>IP</th>
+          <th>query</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% @searches.each do |search| %>
+          <tr>
+            <td><%= search.ip %></td>
+            <td><%= search.query %></td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
